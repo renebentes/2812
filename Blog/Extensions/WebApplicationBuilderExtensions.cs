@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Blog.Extensions;
 
-public static class WebApplicationBuilderExtensions
+internal static class WebApplicationBuilderExtensions
 {
     public static WebApplicationBuilder AddCompression(this WebApplicationBuilder builder)
     {

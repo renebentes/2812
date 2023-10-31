@@ -1,6 +1,6 @@
 namespace Blog.Extensions;
 
-public static class ConfigurationExtensions
+internal static class ConfigurationExtensions
 {
     public static void LoadConfiguration(this IConfiguration configuration)
     {
