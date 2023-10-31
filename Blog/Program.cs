@@ -14,6 +14,7 @@ builder.Services
 
 builder.Services.AddMemoryCache();
 builder.AddCompression();
+builder.Services.AddDatabase();
 builder.AddServices();
 builder.AddSwagger();
 
