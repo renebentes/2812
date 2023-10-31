@@ -2,12 +2,9 @@ using Blog.Data.Mappings;
 
 namespace Blog.Data;
 
-public class BlogDataContext : DbContext
+public class BlogDataContext(DbContextOptions<BlogDataContext> options)
+    : DbContext(options)
 {
-    public BlogDataContext(DbContextOptions<BlogDataContext> options)
-        : base(options)
-    { }
-
     public DbSet<Category> Categories { get; set; }
 
     public DbSet<Post> Posts { get; set; }
