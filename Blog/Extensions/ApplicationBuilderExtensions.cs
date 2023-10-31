@@ -1,6 +1,6 @@
 namespace Blog.Extensions;
 
-public static class IApplicationBuilderExtensions
+public static class ApplicationBuilderExtensions
 {
     public static IApplicationBuilder UseSwaggerConfiguration(this IApplicationBuilder builder)
     {
