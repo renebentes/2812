@@ -29,6 +29,9 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
           dotnet-quality: preview
 
+      - name: Install EF Tools
+        run: dotnet tool install --global dotnet-ef
+
       - name: Install dependencies
         run: dotnet restore
 
