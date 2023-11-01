@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "**.sln"
+      - "**.csproj"
+      - "**.cs"
   workflow_dispatch:
 
 env:
