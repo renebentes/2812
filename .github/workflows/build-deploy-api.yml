@@ -15,6 +15,7 @@ env:
   AZURE_WEBAPP_PACKAGE_PATH: "."
   DOTNET_VERSION: "8.0.x"
   BUILD_CONFIGURATION: Release
+  CONNECTIONSTRINGS__DEFAULTCONNECTION: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
 
 jobs:
   build:
@@ -37,6 +38,9 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build --configuration ${{env.BUILD_CONFIGURATION}} --no-restore
+
+      - name: Update database
+        run: dotnet ef database update --configuration ${{env.BUILD_CONFIGURATION}} --no-build
 
       - name: dotnet publish
         run: dotnet publish -c ${{env.BUILD_CONFIGURATION}} -o ${{env.AZURE_WEBAPP_PACKAGE_PATH}}/myapp
