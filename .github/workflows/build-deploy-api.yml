@@ -44,7 +44,7 @@ jobs:
         run: dotnet ef database update --project ${{ env.PROJECT_PATH }} --configuration ${{env.BUILD_CONFIGURATION}} --no-build
 
       - name: dotnet publish
-        run: dotnet publish -c ${{env.BUILD_CONFIGURATION}} -o ${{env.AZURE_WEBAPP_PACKAGE_PATH}}/myapp
+        run: dotnet publish --configuration ${{env.BUILD_CONFIGURATION}} --output ${{env.AZURE_WEBAPP_PACKAGE_PATH}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
