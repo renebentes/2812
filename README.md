@@ -1,5 +1,7 @@
 # 2812 - Fundamentos do Azure, Git, GitHub e DevOps
 
+[![Build and deploy to Azure](https://github.com/renebentes/2812/actions/workflows/build-deploy-api.yml/badge.svg)](https://github.com/renebentes/2812/actions/workflows/build-deploy-api.yml)
+
 > Repositório do curso Fundamentos do Azure, Git, GitHub e DevOps da plataforma [balta.io](https://balta.io)
 
 Contém códigos de exemplos desenvolvidos durante as aulas.
