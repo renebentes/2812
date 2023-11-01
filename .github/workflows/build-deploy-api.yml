@@ -16,6 +16,7 @@ env:
   DOTNET_VERSION: "8.0.x"
   BUILD_CONFIGURATION: Release
   CONNECTIONSTRINGS__DEFAULTCONNECTION: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
+  PROJECT_PATH: ./Blog/Blog.csproj
 
 jobs:
   build:
@@ -40,7 +41,7 @@ jobs:
         run: dotnet build --configuration ${{env.BUILD_CONFIGURATION}} --no-restore
 
       - name: Update database
-        run: dotnet ef database update --configuration ${{env.BUILD_CONFIGURATION}} --no-build
+        run: dotnet ef database update --project ${{ env.PROJECT_PATH }} --configuration ${{env.BUILD_CONFIGURATION}} --no-build
 
       - name: dotnet publish
         run: dotnet publish -c ${{env.BUILD_CONFIGURATION}} -o ${{env.AZURE_WEBAPP_PACKAGE_PATH}}/myapp
